@@ -1,4 +1,4 @@
-# preconectaton-2024
+# Preconectaton-2024
 Repositorio para la disponibilizar todos los ejercicios y demos que se usaron en la capacitación del 21.11.2024 al 03.12.2024
 
 Los temas tratados son los siguientes:
