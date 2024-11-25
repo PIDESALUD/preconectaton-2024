@@ -1,0 +1,23 @@
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "family": "Huamán",
+      "given": [
+        "José"
+      ],
+      "text": "José Huamán"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1976-02-27",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns='https://www.w3.org/1999/xhtml'>José Huamán</div>"
+  },
+  "meta": {
+    "lastUpdated": "2024-11-21T14:59:30Z",
+    "versionId": "1"
+  }
+}
