@@ -1,0 +1,8 @@
+server:
+  ##port: 9090
+  servlet:
+    context-path: /mcs-mockup-fhir/    
+
+spring:
+  aop:
+    proxy-target-class: true
