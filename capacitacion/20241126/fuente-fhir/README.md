@@ -1,5 +1,7 @@
 # mcs-mouckup-fhir
 
+Servicio mockup del recursos fhir.
+
 ### Clonar el repositorio
 
 1. https://github.com/PIDESALUD/preconectaton-2024.git
