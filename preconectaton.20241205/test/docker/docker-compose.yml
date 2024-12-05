@@ -1,0 +1,36 @@
+version: '3.0'
+services:
+  hapi-fhir:
+    image: "hapiproject/hapi:latest"
+    depends_on:
+      - hapi-db
+    volumes:
+      - ./hapi-config:/data/hapi
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yaml'
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://hapi-db:5433/root'
+      SPRING_DATASOURCE_USERNAME: 'root'
+      SPRING_DATASOURCE_PASSWORD: 'hapifhir2023'
+      SPRING_DATASOURCE_DRIVERCLASSNAME: 'org.postgresql.Driver'
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: 'ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect'
+
+  hapi-db:
+    image: "postgres:14.6"
+    restart: always
+    user: root
+    environment:
+      POSTGRES_DB: "root"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "hapifhir2023"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+    command: -p 5433
+    
+ 
